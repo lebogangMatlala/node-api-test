@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: my-node-api:latest
-        imagePullPolicy: Never
+        image: lebomatlala/my-node-api:latest   # <-- full image name with your Docker Hub username
+        imagePullPolicy: Always   
         ports:
         - containerPort: 3000
         resources:
