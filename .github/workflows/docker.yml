@@ -16,14 +16,18 @@ jobs:
       - name: 🧰 Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
+
       - name: 📦 Install dependencies
         run: npm install
+
+      - name: 🧪 Run tests (optional)
+        run: echo "No tests yet"
 
       - name: 🐳 Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: lebomatlala
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: 🏗️ Build and push Docker image
@@ -31,4 +35,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-node-api:latest
+          tags: lebomatlala/my-node-api:latest
